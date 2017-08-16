@@ -27,13 +27,19 @@ You can specify the directory to unpack to via the '-o' flag. See next example.
 user@host:~/someDir/foo$ unzipOpenXML -o=/tmp/unzippedOpenXMLFiles/some some.xlsx
 ```
 
+NOTE: output directories that do not exist will be created.
+
 There is also a ```debug``` flag, which makes unzipOpenXML spills log messages for every step it does.
 
+```
+user@host:~/someDir/foo$ unzipOpenXML -debug=true some.xlsx
+```
 
 Disclaimer
 ----------
 
 This software is provided as is without any liability.
+
 By intention there is no license associated with this code. 
 See [Software Licenses and Failed States](http://250bpm.com/blog:82) for more thoughts about this.
 
