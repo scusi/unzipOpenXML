@@ -86,12 +86,13 @@ func main() {
 			log.Printf("targetFile '%s' created.\n", path)
 		}
 
-		if _, err := io.Copy(targetFile, fileReader); err != nil {
+		bytesWritten, err := io.Copy(targetFile, fileReader)
+		if err != nil {
 			log.Println(err)
 			continue
 		}
 		if debug {
-			log.Printf("file content from '%s' copied to '%s'\n", file.Name, path)
+			log.Printf("%d bytes copied from '%s' to '%s'\n", bytesWritten, file.Name, path)
 		}
 	}
 	if debug {
